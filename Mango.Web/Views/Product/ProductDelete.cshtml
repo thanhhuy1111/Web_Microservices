@@ -1,0 +1,95 @@
+﻿@model ProductDto
+
+<form asp-action="ProductDelete">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-white text-center">Delete Product</h1>
+        <input hidden asp-for="ProductId" />
+        <hr />
+        <div class="row">
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;"> Name</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="Name" disabled class="form-control" />
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Category Name</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="CategoryName" disabled class="form-control" />
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Description</label>
+            </div>
+            <div class="col-10 pb-3">
+                <textarea asp-for="Description" disabled class="form-control" rows="5" ></textarea>
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Price</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="Price" disabled class="form-control" />
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">ImageUrl</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="ImageUrl" disabled class="form-control" />
+            </div>
+
+            <div class="col-5 offset-2">
+
+                <a asp-action="ProductIndex" class="btn-primary btn form-control ">Back to List</a>
+            </div>
+            <div class="col-5">
+                <input type="submit" value="Delete" class="btn btn-danger form-control" />
+
+            </div>
+
+        </div>
+
+        <div>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<style>
+    /* Chọn container của form và thiết lập màu nền đen */
+    .container {
+        background-color: #000; /* Đen */
+    }
+
+    /* Thiết lập màu chữ trắng cho các nhãn và input */
+    label,
+    input,
+    textarea {
+        color: #fff; /* Trắng */
+    }
+
+    /* Thiết lập màu chữ đỏ cho thông báo lỗi */
+    .text-danger {
+        color: #ff0000; /* Đỏ */
+    }
+
+    /* Thiết lập màu cho các nút */
+    .btn-primary,
+    .btn-success {
+        background-color: #000; /* Đen */
+        border-color: #fff; /* Trắng */
+        color: #fff; /* Trắng */
+    }
+
+        /* Thiết lập màu chữ khi hover vào nút */
+        .btn-primary:hover,
+        .btn-success:hover {
+            background-color: #333; /* Một chút sáng hơn đen */
+            border-color: #fff; /* Trắng */
+            color: #fff; /* Trắng */
+        }
+</style>
